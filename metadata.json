@@ -1,0 +1,6 @@
+{
+  "name": "Think10",
+  "description": "An elite AI-powered business advisory platform for founders and ambitious entrepreneurs, combining generative strategic foresight with world-class human experts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
