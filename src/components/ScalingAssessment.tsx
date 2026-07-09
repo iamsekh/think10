@@ -113,7 +113,7 @@ export default function ScalingAssessment() {
   const allAnswered = Object.keys(answers).length === ASSESSMENT_QUESTIONS.length;
 
   return (
-    <section id="scorecard" className="py-28 bg-[#0F1A2E] relative overflow-hidden">
+    <section id="scorecard" className="py-[50px] bg-[#0F1A2E] relative overflow-hidden">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-emerald-400/8 blur-[150px] rounded-full" />

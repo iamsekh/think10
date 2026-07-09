@@ -19,7 +19,7 @@ export default function TrustBrands() {
   const tripleBrands = [...brands, ...brands, ...brands];
 
   return (
-    <section id="trust-brands" className="py-16 bg-[#F8FAFC] border-y border-[#E2E8F0] overflow-hidden">
+    <section id="trust-brands" className="py-[50px] bg-[#F8FAFC] border-y border-[#E2E8F0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10">
         <div className="flex flex-col items-center justify-center space-y-3">
           <div className="p-2 bg-white rounded-full shadow-sm border border-[#E2E8F0] mb-2">

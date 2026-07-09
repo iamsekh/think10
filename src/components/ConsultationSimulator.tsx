@@ -54,7 +54,7 @@ const STATS = [
 
 export default function ConsultationSimulator() {
   return (
-    <section id="simulator" className="py-28 bg-[#F4FCF9] relative overflow-hidden">
+    <section id="simulator" className="py-[50px] bg-[#F4FCF9] relative overflow-hidden">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-emerald-400/10 blur-[140px] rounded-full" />

@@ -4,7 +4,7 @@ import { BLOG_POSTS } from '../data';
 
 export default function Blogs() {
   return (
-    <section id="insights" className="py-24 bg-white relative overflow-hidden">
+    <section id="insights" className="py-[50px] bg-white relative overflow-hidden">
       {/* Pastel Wave */}
       <div
         className="absolute inset-0 z-0 opacity-40 pointer-events-none"

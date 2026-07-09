@@ -13,7 +13,7 @@ export default function TheTenDimensions() {
   const [selectedDimension, setSelectedDimension] = useState<StrategicDimension>(STRATEGIC_DIMENSIONS[0]);
 
   return (
-    <section id="dimensions" className="py-28 relative overflow-hidden bg-[#0A1628]">
+    <section id="dimensions" className="py-[50px] relative overflow-hidden bg-[#0A1628]">
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-emerald-500/10 blur-[140px] rounded-full" />
@@ -21,7 +21,7 @@ export default function TheTenDimensions() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
 
-      <div className="max-w-[90rem] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header */}
         <motion.div

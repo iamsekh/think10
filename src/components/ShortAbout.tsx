@@ -12,7 +12,7 @@ const Word = ({ children, progress, range }: WordProps) => {
   // Map the progress to color transition from light grey to dark slate
   const color = useTransform(progress, range, ["#CBD5E1", "#0B1220"]);
   return (
-    <motion.span style={{ color }} className="inline-block mr-3 lg:mr-4">
+    <motion.span style={{ color }} className="inline">
       {children}
     </motion.span>
   );
@@ -29,7 +29,7 @@ export default function ShortAbout() {
   const words = statement.split(" ");
 
   return (
-    <section id="about" className="py-32 bg-white relative overflow-hidden">
+    <section id="about" className="py-[50px] bg-white relative overflow-hidden">
       {/* Soft Green Glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] z-0 pointer-events-none opacity-30"
@@ -49,14 +49,17 @@ export default function ShortAbout() {
 
         {/* Cinematic Scroll Reveal Text */}
         <div className="mb-24" ref={containerRef}>
-          <p className="font-heading font-extrabold text-4xl md:text-5xl lg:text-[64px] leading-[1.2] tracking-tight text-center flex flex-wrap justify-center">
+          <p className="font-heading font-extrabold text-4xl md:text-5xl lg:text-[64px] leading-[1.2] tracking-tight text-justify hyphens-auto">
             {words.map((word, i) => {
               const start = i / words.length;
               const end = start + (1 / words.length);
               return (
-                <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                  {word}
-                </Word>
+                <span key={i}>
+                  <Word progress={scrollYProgress} range={[start, end]}>
+                    {word}
+                  </Word>
+                  {i < words.length - 1 ? " " : ""}
+                </span>
               );
             })}
           </p>

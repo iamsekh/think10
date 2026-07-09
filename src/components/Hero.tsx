@@ -25,7 +25,7 @@ export default function Hero({ onNavigate }: HeroProps) {
     <section
       id="hero"
       ref={containerRef}
-      className="relative pt-32 pb-24 md:pt-48 md:pb-40 bg-[#F4FCF9] overflow-hidden"
+      className="pt-[146px] pb-[50px] relative bg-[#F4FCF9] overflow-hidden"
     >
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>

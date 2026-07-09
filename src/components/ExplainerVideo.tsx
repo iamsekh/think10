@@ -6,7 +6,7 @@ export default function ExplainerVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-24 bg-[#F4FCF9] border-y border-[#E2E8F0] relative overflow-hidden">
+    <section className="py-[50px] bg-[#F4FCF9] border-y border-[#E2E8F0] relative overflow-hidden">
       {/* Background visual flair */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[#68E8C4]/10 blur-[120px] rounded-full pointer-events-none"></div>
       

@@ -4,6 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUpRight, ShieldCheck, HelpCircle } from 'lucide-react';
 
@@ -15,6 +17,8 @@ interface HeaderProps {
 export default function Header({ onNavigate, activeSection }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { role, logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +50,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <button
           id="btn-logo"
@@ -86,6 +90,33 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center space-x-4">
+          {!role ? (
+            <button
+              onClick={() => navigate('/login')}
+              className="font-sans text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors cursor-pointer focus:outline-none"
+            >
+              Login
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={() => navigate(`/dashboard/${role}`)}
+                className="font-sans text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors cursor-pointer focus:outline-none"
+              >
+                Dashboard
+              </button>
+              <button
+                onClick={() => {
+                  logout();
+                  navigate('/');
+                }}
+                className="font-sans text-sm font-medium text-red-500 hover:text-red-700 transition-colors cursor-pointer focus:outline-none"
+              >
+                Logout
+              </button>
+            </>
+          )}
+
           <button
             id="btn-nav-briefing"
             onClick={() => handleItemClick('briefing')}

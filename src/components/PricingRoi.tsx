@@ -111,7 +111,7 @@ export default function PricingRoi() {
   const ActiveIcon = activeTier.icon;
 
   return (
-    <section id="pricing" className="py-28 relative bg-[#F4FCF9] overflow-hidden">
+    <section id="pricing" className="py-[50px] relative bg-[#F4FCF9] overflow-hidden">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-emerald-400/10 blur-[140px] rounded-full" />

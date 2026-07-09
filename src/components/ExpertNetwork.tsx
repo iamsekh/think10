@@ -41,7 +41,7 @@ export default function ExpertNetwork() {
   };
 
   return (
-    <section id="experts" className="py-24 bg-[#F4FCF9] border-b border-[#E2E8F0]">
+    <section id="experts" className="py-[50px] bg-[#F4FCF9] border-b border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header */}

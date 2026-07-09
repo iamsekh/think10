@@ -197,7 +197,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-[11px] font-mono tracking-wide">
-            <span>© {currentYear} Think10 Advisory UAE. All rights reserved.</span>
+            <span>© {currentYear} Think10. Managed by <a href="https://taqseem.ae" target="_blank" rel="noopener noreferrer" className="hover:text-[#68E8C4] transition-colors">Taqseem</a> Consulting Services LLC. All rights reserved.</span>
             <div className="flex space-x-6">
               <a href="#footer" className="hover:text-[#68E8C4] transition-colors">Confidentiality Protocol</a>
               <a href="#footer" className="hover:text-[#68E8C4] transition-colors">NDA Terms of Service</a>

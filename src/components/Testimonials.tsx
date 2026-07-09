@@ -7,7 +7,7 @@ export default function Testimonials() {
   const carouselItems = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section id="testimonials" className="py-24 bg-[#F8FAFC] border-y border-[#E2E8F0] overflow-hidden relative">
+    <section id="testimonials" className="py-[50px] bg-[#F8FAFC] border-y border-[#E2E8F0] overflow-hidden relative">
       
       {/* Background aesthetics */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#d5c5ff]/20 blur-[120px] rounded-full pointer-events-none mix-blend-multiply"></div>
