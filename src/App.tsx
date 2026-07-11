@@ -1,16 +1,25 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
+import AdminLogin from './pages/AdminLogin';
+import ConsultantLogin from './pages/ConsultantLogin';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import ConsultantDashboard from './pages/ConsultantDashboard';
 
 // Protected Route wrapper component
-function ProtectedRoute({ children, allowedRoles }: { children: JSX.Element, allowedRoles: ('user' | 'admin' | 'consultant')[] }) {
+function ProtectedRoute({ children, allowedRoles }: { children: React.ReactElement, allowedRoles: ('user' | 'admin' | 'consultant')[] }) {
   const { role } = useAuth();
   
   if (!role) {
+    if (allowedRoles.includes('admin')) {
+      return <Navigate to="/admin" replace />;
+    }
+    if (allowedRoles.includes('consultant')) {
+      return <Navigate to="/consultant" replace />;
+    }
     return <Navigate to="/login" replace />;
   }
   
@@ -29,6 +38,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/consultant" element={<ConsultantLogin />} />
+            <Route path="/user" element={<Navigate to="/dashboard/user" replace />} />
             
             {/* Dashboards */}
             <Route 
@@ -55,6 +67,9 @@ export default function App() {
                 </ProtectedRoute>
               } 
             />
+
+            {/* Catch-all fallback */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </Router>
